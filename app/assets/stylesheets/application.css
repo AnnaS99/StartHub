@@ -15,12 +15,12 @@
  */
 
  body {
-
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(216, 231, 255) 100%);
   }
+
  .fullpage {
-margin-top: 5em;
-font-family: monospace; 
+    margin-top: 5em;
+    font-family: monospace; 
 
  }
  .ideapage {
@@ -37,12 +37,10 @@ font-family: monospace;
 }
 
 .logo {
-
     position: absolute;
     top: 2em; 
     right: 5em;
     width: 10em;
-
 }
 
 .nav_buttons {
@@ -50,8 +48,8 @@ font-family: monospace;
 }
 
 .comment_name {
-  margin: 0px;
-  font-size: 0.8em;  
+    margin: 0px;
+    font-size: 0.8em;  
 }
 
 .comment {
@@ -65,16 +63,13 @@ font-family: monospace;
 
 .btn_green {
     background-color: rgb(116, 231, 160);
-
 }
 
 .btn_red {
     background-color: rgb(236, 150, 150);
-
 }
 .btn_yellow {
     background-color: rgb(233, 238, 167);
-
 }
 
 .submit_form > div {

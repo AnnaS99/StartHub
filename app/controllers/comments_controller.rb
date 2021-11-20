@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
     def create
         @idea = Idea.find(params[:idea_id])
         @comment = @idea.comments.new(comment_params)
@@ -11,6 +10,7 @@ class CommentsController < ApplicationController
             redirect_to idea_path(@idea)
         end
     end
+
     def destroy
         @idea = Idea.find(params[:idea_id])
         @comment = @idea.comments.find(params[:id])
@@ -18,11 +18,12 @@ class CommentsController < ApplicationController
             flash.notice = "Comment deleted!"
             redirect_to idea_path(@idea)
         else
-        flash.alert = "Something went wrong"
-        redirect_to idea_path(@idea)
+            flash.alert = "Something went wrong"
+            redirect_to idea_path(@idea)
         end            
      end
-            def comment_params
+
+    def comment_params
         params.require(:comment).permit(
             :text,
             :name,

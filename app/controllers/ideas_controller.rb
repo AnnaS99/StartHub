@@ -1,16 +1,15 @@
 class IdeasController < ApplicationController
-   def index
-    @ideas = Idea.all
+    def index
+        @ideas = Idea.all
+    end
 
-   end
+    def new
+        @idea = Idea.new
+    end
 
-   def new
-    @idea = Idea.new
-   end
+    def create
 
-   def create
-
-    @idea = Idea.new(idea_params)
+        @idea = Idea.new(idea_params)
 
         if @idea.save
             flash.notice = "Your idea has been uploaded!"
@@ -24,6 +23,7 @@ class IdeasController < ApplicationController
     def edit
         @idea = Idea.find(params[:id])
     end
+    
     def update
         @idea = Idea.find(params[:id])
         if @idea.update(idea_params)
@@ -34,6 +34,7 @@ class IdeasController < ApplicationController
             render :edit 
         end
     end
+
     def destroy
         @idea = Idea.find(params[:id])
         if @idea.destroy
@@ -42,15 +43,12 @@ class IdeasController < ApplicationController
         else
             flash.alert = "Something went wrong"
             redirect_to ideas_path
-    
         end
     end
+
     def show
         @idea = Idea.find(params[:id])
-      end
-
-
-
+    end
 
     def idea_params
         params.require(:idea).permit(
@@ -62,7 +60,5 @@ class IdeasController < ApplicationController
             :help,
             :keywords
         )
-
     end
-
 end
