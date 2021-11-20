@@ -2,7 +2,7 @@
 
 <ul>
 <% @ideas.each do |i| %>
-
+<div class="idea_home">
 <h2> <%= i.title %></h2>
 <h4 class="border border-info"> <%= i.sub %></h4>
 <h6 class="border border-info"> <%= i.keywords %> <%= i.b2bc %> </h6>
@@ -11,7 +11,7 @@
             <%= link_to "Delete your idea", idea_path(i), method: "DELETE" , :data => { :confirm => "Your´re sure??"}, class:"btn btn_red" %>
             <%= link_to 'Discover this idea', idea_path(i), class:"btn btn_green" %> 
 </div>
-
+</div>
 
 
 

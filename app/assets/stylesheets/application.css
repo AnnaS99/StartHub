@@ -14,13 +14,26 @@
  *= require_self
  */
 
+ body {
+
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(216, 231, 255) 100%);
+  }
  .fullpage {
 margin-top: 5em;
+font-family: monospace; 
 
  }
  .ideapage {
     margin-top: 5em;
     
+}
+
+.idea_home {
+    margin-top: 2em;
+}
+
+.idea_submit_button {
+    margin-top: 1em;
 }
 
 .logo {
@@ -62,4 +75,8 @@ margin-top: 5em;
 .btn_yellow {
     background-color: rgb(233, 238, 167);
 
+}
+
+.submit_form > div {
+    margin-bottom: 0.7em;
 }

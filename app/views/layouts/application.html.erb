@@ -24,9 +24,9 @@
       </div>
     <% end %>
 <div class="btn-group nav_buttons">
-  
+    <%= link_to "All Ideas", ideas_path, class: (current_page?(ideas_path) ? "btn btn-primary active" : "btn btn-primary") %>  
     <%= link_to "Pitch your Idea", new_idea_path, class: (current_page?(new_idea_path) ? "btn btn-primary active" : "btn btn-primary") %>
-       <%= link_to "All Ideas", ideas_path, class: (current_page?(ideas_path) ? "btn btn-primary active" : "btn btn-primary") %>
+
 </div>
     <%= yield %>
     </div>

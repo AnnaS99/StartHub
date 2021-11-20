@@ -1,35 +1,46 @@
 <%= form_for @idea do |f| %>
-<div>
+<div class="submit_form">
+<div class="form-floating">
+<%= f.text_field :title, class:"form-control" %>
 <%= f.label :title %>
-<%= f.text_field :title %>
+
 </div>
-<div>
-<%= f.label :sub %>
-<%= f.text_field :sub %>
+<div class="form-floating">
+<%= f.text_field :sub, class:"form-control" %>
+<%= f.label :subtitle %>
+
 </div>
-<div>
+<div class="form-floating">
+<%= f.text_area :description, class:"form-control" %>
 <%= f.label :description %>
-<%= f.text_area :description %>
+
 </div>
-<div>
-<%= f.label :target %>
-<%= f.text_field :target %>
-</div>
-<div>
-<%= f.label :b2bc %>
-<%= f.text_field :b2bc %>
-</div>
-<div>
-<%= f.label :help %>
-<%= f.text_field :help %>
-</div>
-<div>
-<%= f.label :keywords %>
-<%= f.text_field :keywords %>
+<div class="form-floating">
+<%= f.text_field :target, class:"form-control" %>
+<%= f.label :target_group %>
+
 </div>
 
+<div class="form-floating">
+<%= f.text_field :help, class:"form-control" %>
+<%= f.label :what_you_need %>
+
+</div>
+<div class="form-floating">
+<%= f.text_field :keywords, class:"form-control" %>
+<%= f.label :keywords %>
+
+</div>
+<div class="form-floating">
+
+<%= f.radio_button :b2bc, 'B2B' , class:"form-check-input" %>B2B
+<%= f.radio_button :b2bc, 'B2C' , class:"form-check-input" %>B2C
+<%= f.radio_button :b2bc, 'B2B2C' , class:"form-check-input" %>B2B2C
+
+</div>
 <div>
-<%= f.submit %>
+<%= f.submit class: 'btn btn-primary idea_submit_button' %>
+</div>
 </div>
 
 
