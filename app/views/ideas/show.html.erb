@@ -1,0 +1,68 @@
+
+
+
+<div class="container ideapage">
+<div class="row">
+<div class="col">
+<h2><%= @idea.title %></h2>
+<p class="border border-info"><i>Subtitle: </i><%= @idea.sub%></p>
+<p class="border border-info"><i>Description: </i><%= @idea.description%> </p>
+<p class="border border-info"><i>Target: </i><%= @idea.target%> </p>
+<p class="border border-info"><i>B2?: </i><%= @idea.b2bc%> </p>
+<p class="border border-info"><i>Need help: </i><%= @idea.help%> </p>
+<p class="border border-info"><i>Keywords: </i><%= @idea.keywords%> </p>
+</div>
+<div class="col">
+
+<div>
+  <%= form_for [@idea, Comment.new] do |f| %>
+    <div class="container">
+    <h3>New Comment</h3>
+      <div class="row">
+        <div class="col">
+          <div class="form-floating mb-3">
+            <%= f.text_field :text, class: 'form-control' %>
+            <%= f.label :text %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-floating mb-3">
+            <%= f.text_field :name, class: 'form-control' %>
+            <%= f.label :name %>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-floating mb-3">
+            <%= f.email_field :email, class: 'form-control' %>
+            <%= f.label :email %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-floating mb-3">
+            <%= f.submit class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="container">
+<h3>Comments</h3>
+<% @idea.comments.order(created_at: :desc).each do |c| %>
+    <div class="border border-info comment">
+        
+        <p class="comment_name"><%= link_to c.name, "mailto:#{c.email}" %>:</p>
+        <p><%= c.text%></p>
+        <p class="delete"><%= link_to "Delete", idea_comment_path(@idea, c), method: 'DELETE',  :data => { :confirm => 'You´re sure?'} %></p>
+    </div>
+    
+<%end%>
+</div>
+</div>
+</div>
+</div>
